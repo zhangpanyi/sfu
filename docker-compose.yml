@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  mesfu:
+    image: mesfu
+    build:
+      context: .
+    logging:
+      driver: json-file
+      options:
+        max-file: "5"
+        max-size: 10m
+    container_name: mesfu
+    expose:
+      - 8084
+    ports:
+      - 8084:8084
+      - 32400-32900:32400-32900/udp
+    command: node index.js 47.110.40.249

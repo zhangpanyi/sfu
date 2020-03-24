@@ -11,7 +11,7 @@ const name = href.searchParams.get("name");
 //Get video
 const nopublish = href.searchParams.has("nopublish");
 //Get ws url from navigaro url
-const url = "wss://"+href.host;
+const url = "wss://room.docauthor.com";
 
 if (href.searchParams.has ("video"))
 	switch (href.searchParams.get ("video").toLowerCase ())
