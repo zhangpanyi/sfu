@@ -19,6 +19,7 @@ const MediaServer = require("medooze-media-server");
 //Enable debug
 MediaServer.enableDebug(false);
 MediaServer.enableUltraDebug(false);
+MediaServer.setPortRange(32400, 32900);
 
 //Check 
 if (process.argv.length!=3)
