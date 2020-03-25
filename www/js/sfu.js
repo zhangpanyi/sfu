@@ -90,13 +90,13 @@ function connect(url,roomId,name)
 	var tm = new TransactionManager(ws);
 	
 	pc.onaddstream = function(event) {
-		console.debug("pc::onAddStream",event);
+		console.info("pc::onAddStream",event);
 		//Play it
 		addVideoForStream(event.stream);
 	};
 	
 	pc.onremovestream = function(event) {
-		console.debug("pc::onRemoveStream",event);
+		console.info("pc::onRemoveStream",event);
 		//Play it
 		removeVideoForStream(event.stream);
 	};
@@ -116,7 +116,7 @@ function connect(url,roomId,name)
 					video: videoResolution
 				});
 
-				console.debug("md::getUserMedia sucess",stream);
+				console.info("md::getUserMedia sucess",stream);
 
 				//Play it
 				addVideoForStream(stream,true);
@@ -130,7 +130,7 @@ function connect(url,roomId,name)
 				offerToReceiveVideo: true
 			});
 
-			console.debug("pc::createOffer sucess",offer);
+			console.info("pc::createOffer sucess",offer);
 
 			//Set it
 			pc.setLocalDescription(offer);
